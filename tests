@@ -60,20 +60,9 @@ All responses conform to `schemas/output_schema.json`. Key fields:
 
 ---
 
-## 🤝 Contributing
-
-Found a bug in the prompt? Want to add a new topic category?
-1. Fork the repo
-2. Edit the relevant file in-browser
-3. Submit a pull request with a clear description
-
 ---
-
-## 📜 License
-
-MIT License — feel free to use, adapt, and share. See [LICENSE](LICENSE) for details.
 
 ---
 
 > 💡 **Tip**: Bookmark the raw prompt URL for one-click reuse:  
-> `https://raw.githubusercontent.com/YOUR_USERNAME/ai-safety-sourcing-agent/main/prompts/system_prompt.md`
+> `https://raw.githubusercontent.com/moraisijessy-ai/automated-hiring-agent/refs/heads/main/prompts/system_prompt.md'
