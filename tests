@@ -1,0 +1,79 @@
+
+---
+
+## 🚀 Quick Start (No Code)
+
+### Option A: Use Directly in Claude
+1. Go to your repo → open `prompts/system_prompt.md`
+2. Click **Raw** → copy the URL
+3. In [claude.ai](https://claude.ai), paste:
+
+
+
+### Option B: Use via API
+1. Copy the raw prompt URL as above
+2. Include it in your `system` parameter when calling the Anthropic API
+3. Parse the JSON response using `schemas/output_schema.json`
+
+---
+
+## 🔑 Key Features
+
+✅ **Strict JSON output** — No markdown, no explanations, machine-parseable  
+✅ **Topic-weighted ranking** — Direct topics (scheming, deception) prioritized  
+✅ **Eligibility filters** — Location, recency, evidence requirements enforced  
+✅ **Confidence flags** — Low-confidence entries clearly marked for review  
+✅ **Verifiable sources** — Every researcher includes at least one citable URL  
+
+---
+
+## 📐 Output Schema
+
+All responses conform to `schemas/output_schema.json`. Key fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `researchers[].name` | string | Full name |
+| `researchers[].relevance_score` | number (0–1) | Weighted relevance score |
+| `researchers[].topic_category` | enum | `"direct"` or `"adjacent"` |
+| `researchers[].evidence[].url` | URI | Verifiable source link |
+| `researchers[].confidence` | enum | `"high"`, `"medium"`, or `"low"` |
+
+🔗 [View full schema](./schemas/output_schema.json)
+
+---
+
+## 🧪 Testing
+
+1. Open `tests/example_query.txt` and copy a sample query
+2. Paste into Claude with the system prompt loaded
+3. Validate output against `schemas/output_schema.json` using any JSON Schema validator
+
+---
+
+## ⚠️ Important Notes
+
+- 🔐 **Never commit API keys or `.env` files** to this repository
+- 🌐 Claude must have web access enabled to verify researcher affiliations
+- 🔄 Results reflect publicly available information only — always verify critical hires manually
+- 📅 Eligibility requires work published 2021–2026
+
+---
+
+## 🤝 Contributing
+
+Found a bug in the prompt? Want to add a new topic category?
+1. Fork the repo
+2. Edit the relevant file in-browser
+3. Submit a pull request with a clear description
+
+---
+
+## 📜 License
+
+MIT License — feel free to use, adapt, and share. See [LICENSE](LICENSE) for details.
+
+---
+
+> 💡 **Tip**: Bookmark the raw prompt URL for one-click reuse:  
+> `https://raw.githubusercontent.com/YOUR_USERNAME/ai-safety-sourcing-agent/main/prompts/system_prompt.md`
