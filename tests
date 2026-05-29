@@ -65,4 +65,4 @@ All responses conform to `schemas/output_schema.json`. Key fields:
 ---
 
 > 💡 **Tip**: Bookmark the raw prompt URL for one-click reuse:  
-> `https://raw.githubusercontent.com/moraisijessy-ai/automated-hiring-agent/refs/heads/main/prompts/system_prompt.md'
+> https://raw.githubusercontent.com/moraisijessy-ai/automated-hiring-agent/refs/heads/main/prompts/system_prompt.md?token=GHSAT0AAAAAAD56HNWKOO53STGA2G4JANEW2QZONNQ
