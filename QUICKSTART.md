@@ -11,6 +11,9 @@ Paste into Claude with:
 "Please follow this system prompt: [paste URL]"
 
 ## Step 3: Run a Query
+## Query Template
+Find [NUMBER] researchers working on [TOPIC] at [SOURCES] from [TIMEFRAME].
+Include [CONTACT FIELDS] when available.
 Example:
 "Find 10 researchers working on deceptive alignment from 2023-2026. Include email and LinkedIn."
 
@@ -19,9 +22,7 @@ Receive a markdown table sorted by relevance score (0.0-1.0)
 
 ---
 
-## Query Template
-Find [NUMBER] researchers working on [TOPIC] at [SOURCES] from [TIMEFRAME].
-Include [CONTACT FIELDS] when available.
+
 
 
 ### Examples:
