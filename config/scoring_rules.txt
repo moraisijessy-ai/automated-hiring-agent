@@ -1,8 +1,8 @@
 AI SAFETY RESEARCHER SCORING GUIDE
 ==================================
-Version: 1.0 | Last Updated: 2026
+Version: 2.0 | Last Updated: 2026
 
-This document explains how relevance scores (0.0–1.0) are calculated.
+This document explains how relevance scores (0.0-1.0) are calculated.
 Use this for manual review or prompt tuning.
 
 ─────────────────────────────────────
@@ -10,20 +10,48 @@ Use this for manual review or prompt tuning.
 ─────────────────────────────────────
 
 DIRECT TOPICS (Base: +0.30 to +0.50)
-✓ scheming
-✓ deceptive alignment
-✓ strategic deception
-✓ power-seeking behaviour
-✓ hidden objectives
-✓ situational awareness
+✓ Deceptive alignment
+✓ AI scheming
+✓ Treacherous turn
+✓ Sandbagging
+✓ Strategic underperformance
+✓ Strategic awareness
+✓ Evaluation gaming
+✓ Sycophancy
+✓ Outer alignment
+✓ Inner alignment
+✓ Mesa-optimizer
+✓ Base objective
+✓ Mesa-objective
+✓ Value alignment
+✓ Corrigibility
+✓ Reward hacking
+✓ Specification gaming
+✓ Goodhart's Law
+✓ Goal misgeneralization
+✓ Wireheading
+✓ Ontological crisis
+✓ Ontological shift
+✓ Instrumental convergence
+✓ FOOM / Fast takeoff / Hard takeoff
+✓ Sharp left turn
+✓ Decisive strategic advantage
+✓ Paperclip maximizer
 
 ADJACENT TOPICS (Base: +0.15 to +0.25)
-✓ AI control
-✓ monitoring systems
-✓ oversight
-✓ model organisms of misalignment
-✓ goal misgeneralisation
-✓ alignment evaluations
+✓ Scalable oversight
+✓ AI debate
+✓ Recursive reward modeling
+✓ RLHF
+✓ Constitutional AI
+✓ Elicitation
+✓ Mechanistic interpretability
+✓ Circuits
+✓ Features
+✓ Boxing
+✓ Oracle AI
+✓ Stop button problem
+✓ Soft takeoff
 
 → Researchers with work in BOTH categories: use the higher base score.
 
@@ -35,8 +63,7 @@ Apply multiplier to base score based on most recent relevant work:
 
 • 2024–2026: ×1.0 (full credit)
 • 2021–2023: ×0.9 (slight decay)
-• 2018–2020: ×0.7 (significant decay)
-• Before 2018: ×0.4 (only include if highly influential)
+• Before 2021: ×0.7 (significant decay)
 
 ─────────────────────────────────────
 3. EVIDENCE QUALITY BONUSES
@@ -45,7 +72,6 @@ Apply multiplier to base score based on most recent relevant work:
 +0.10  Peer-reviewed paper at top venue (NeurIPS, ICML, ICLR, etc.)
 +0.05  Preprint on arXiv with >50 citations
 +0.05  Technical post on Alignment Forum / LessWrong with strong engagement
-+0.05  Open-source tool or dataset relevant to target topics
 +0.03  Each additional piece of qualifying evidence (max +0.15 total)
 
 ─────────────────────────────────────
@@ -57,8 +83,6 @@ Reduce final score if:
 - Affiliation is outdated or ambiguous: −0.05
 - Topic match relies on single keyword mention: −0.10
 - No direct link to full text/abstract: −0.05
-
-Flag as confidence="low" if total deductions ≥0.15.
 
 ─────────────────────────────────────
 5. FINAL SCORE CALCULATION
@@ -72,7 +96,20 @@ examples:
   • Adjacent topic (0.20) × recency (0.9) + evidence (0.05) − ambiguity (0.05) = 0.18 → score: 0.18
 
 ─────────────────────────────────────
-6. RANKING ORDER (TIE-BREAKERS)
+6. QUALITY THRESHOLD
+─────────────────────────────────────
+
+Only include researchers with final_score ≥ 0.30
+
+Score interpretation:
+• 0.80-1.00: Excellent match, strong evidence, recent work
+• 0.60-0.79: Strong match, good evidence
+• 0.40-0.59: Moderate match, some evidence
+• 0.30-0.39: Minimum threshold, borderline inclusion
+• < 0.30: Exclude (weak match)
+
+─────────────────────────────────────
+7. RANKING ORDER (TIE-BREAKERS)
 ─────────────────────────────────────
 
 1. relevance_score (descending)
@@ -81,22 +118,24 @@ examples:
 4. alphabetical by name (for deterministic ordering)
 
 ─────────────────────────────────────
-7. WHEN TO EXCLUDE
+8. WHEN TO EXCLUDE
 ─────────────────────────────────────
 
 Do NOT include a researcher if:
-• No verifiable UK/US affiliation
-• No relevant work published 2021–2026
+• Final score < 0.30
+• No verifiable affiliation
+• No relevant work in requested timeframe
 • Work is purely policy/governance with no technical content
-• Only tangential keyword match (e.g., "alignment" in abstract but not core focus)
-• Duplicate of another entry (prefer most recent affiliation)
+• Only tangential keyword match
+• Duplicate of another entry
 
 ─────────────────────────────────────
 REVIEW CHECKLIST (for human validators)
 ─────────────────────────────────────
 
-[ ] Affiliation verified via institutional page or recent publication
+[ ] Score calculation verified
 [ ] At least one evidence URL is accessible and on-topic
 [ ] Topic category correctly assigned (direct vs. adjacent)
-[ ] Confidence level matches evidence quality
+[ ] Recency multiplier applied correctly
 [ ] No PII or sensitive data included in output
+[ ] Minimum 3 of 8 contact fields populated
