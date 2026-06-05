@@ -1,0 +1,12 @@
+SAMPLE QUERIES FOR TESTING
+==========================
+
+Find 3 researchers in the United Kingdom working on deceptive alignment or scheming. Return only JSON.
+
+---
+
+Identify 10 researchers in the United States or United Kingdom who have published work since 2021 on scheming, strategic deception, or power-seeking behaviour. Return only valid JSON.
+
+---
+
+List 5 US-based researchers working on AI control, oversight, or monitoring systems. Exclude purely policy/governance work. Return JSON with confidence scores.
