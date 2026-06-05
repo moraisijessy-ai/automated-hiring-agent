@@ -8,11 +8,11 @@ Copy this URL:
 https://raw.githubusercontent.com/moraisijessy-ai/automated-hiring-agent/main/prompts/system_prompt.md
 
 Paste into Claude with:
-"Please follow this system prompt: [paste text]"
+"Please follow this system prompt: [paste URL]"
 
 ## Step 3: Run a Query
 Example:
-"Find 10 researchers working on deceptive alignment at Anthropic from 2023-2026. Include email and LinkedIn."
+"Find 10 researchers working on deceptive alignment from 2023-2026. Include email and LinkedIn."
 
 ## Step 4: Get Results
 Receive a markdown table sorted by relevance score (0.0-1.0)
