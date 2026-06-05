@@ -14,6 +14,8 @@ Paste into Claude with:
 ## Query Template
 Find [NUMBER] researchers working on [TOPIC] at [SOURCES] from [TIMEFRAME].
 Include [CONTACT FIELDS] when available.
+
+
 Example:
 "Find 10 researchers working on deceptive alignment from 2023-2026. Include email and LinkedIn."
 
