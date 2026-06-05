@@ -8,7 +8,7 @@ Copy this URL:
 https://raw.githubusercontent.com/moraisijessy-ai/automated-hiring-agent/main/prompts/system_prompt.md
 
 Paste into Claude with:
-"Please follow this system prompt: [paste URL]"
+"Please follow this prompt: [paste URL]"
 
 ## Step 3: Run a Query
 ## Query Template
