@@ -1,12 +1,89 @@
 SAMPLE QUERIES FOR TESTING
-==========================
+===========================
 
-Find 3 researchers in the United Kingdom working on deceptive alignment or scheming. Return only JSON.
+Query 1: Basic Search
+---------------------
+Find researchers working on deceptive alignment and AI scheming at Anthropic and DeepMind from 2023-2026.
+
+Include email, LinkedIn, and publication links when available.
+
+Expected: Markdown table with Score column, sorted by score (highest first).
 
 ---
 
-Identify 10 researchers in the United States or United Kingdom who have published work since 2021 on scheming, strategic deception, or power-seeking behaviour. Return only valid JSON.
+Query 2: Specific Topic
+-----------------------
+Identify researchers working on mechanistic interpretability or circuits at Redwood Research, Conjecture, or Berkeley CHAI in the last 3 years.
+
+Return markdown table with all available contact fields.
+
+Expected: Researchers with scores ≥ 0.30, at least 3 fields populated.
 
 ---
 
-List 5 US-based researchers working on AI control, oversight, or monitoring systems. Exclude purely policy/governance work. Return JSON with confidence scores.
+Query 3: Conference Focus
+-------------------------
+List authors of papers on reward hacking or specification gaming at NeurIPS 2024, ICML 2024, or ICLR 2024.
+
+Include personal websites and Twitter if public.
+
+Expected: High scores (0.60+) due to recent peer-reviewed publications.
+
+---
+
+Query 4: Broad Search
+---------------------
+Find researchers working on scalable oversight, RLHF, or Constitutional AI at any of the default sources (AISafety.com/map orgs) from 2022-2026.
+
+Prioritize precision — exclude weak matches.
+
+Expected: Only researchers with score ≥ 0.30 included.
+
+---
+
+Query 5: Contact-Focused
+------------------------
+Search for researchers at FAR AI, Apollo Research, or Kairos working on AI safety topics.
+
+Prioritize finding public email addresses and LinkedIn profiles.
+Timeframe: Last 5 years.
+
+Expected: Table sorted by score, with contact fields populated where available.
+
+---
+
+Expected Output Format
+----------------------
+Results should be returned as a markdown table:
+
+| Score | Name | Organization | Paper | Link | Email | LinkedIn | Twitter | Website |
+|-------|------|--------------|-------|------|-------|----------|---------|---------|
+| 0.85 | Dr. Jane Smith | Anthropic | "Deceptive Alignment in LLMs" | https://arxiv.org/... | jane@anthropic.com | linkedin.com/in/janesmith | @janesmith | janeresearch.com |
+| 0.72 | Dr. John Doe | DeepMind | "Scalable Oversight..." | https://deepmind.com/... | johndoe@deepmind.com | linkedin.com/in/johndoe | @johndoe | johndoe.ai |
+
+Requirements:
+- Score: 0.0-1.0 (only include ≥ 0.30)
+- At least 3 of the 8 fields (excluding Score) must be populated
+- Sorted by Score (descending)
+
+---
+
+Scoring Examples
+----------------
+Example 1: Direct topic + recent work + top venue
+- Base: 0.45 (direct topic: deceptive alignment)
+- Recency: ×1.0 (2024 paper)
+- Evidence: +0.10 (NeurIPS paper)
+- Final: 0.55
+
+Example 2: Adjacent topic + older work
+- Base: 0.20 (adjacent topic: RLHF)
+- Recency: ×0.9 (2022 paper)
+- Evidence: +0.05 (arXiv preprint)
+- Final: 0.23 → EXCLUDED (< 0.30 threshold)
+
+Example 3: Direct topic + multiple evidence
+- Base: 0.40 (direct topic: AI scheming)
+- Recency: ×1.0 (2025 paper)
+- Evidence: +0.10 (ICML) + 0.05 (Alignment Forum) + 0.03 (personal website)
+- Final: 0.58
